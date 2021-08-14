@@ -1,0 +1,35 @@
+.main-div-question-page{
+    background: url('../image/background.svg') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+.question-details{
+    margin-top: 140px;
+    width: 45%;
+}
+.question-heading{
+    font-size: calc(2em + 2.5vw);
+    font-family: 'Bubblegum Sans', cursive;
+    border-bottom: 3px solid rgb(32, 233, 32);
+}
+.question-desc{
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: calc(0.1em + 1.7vw);
+}
+.response-button{
+    border: none;
+    color:white;
+    padding:5px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.response-button-link{
+    width: 150px;
+}

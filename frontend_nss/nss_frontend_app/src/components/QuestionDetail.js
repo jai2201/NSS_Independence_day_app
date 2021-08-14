@@ -1,6 +1,8 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
+import question_mark from '../static/image/question_mark.svg';
+import '../static/css/question_detail_page.css';
 
 const QuestionDetail = (props) => {
 	const [question, setQuestion] = useState({});
@@ -19,74 +21,30 @@ const QuestionDetail = (props) => {
 		fetchData();
 	}, [props.match.params.pk]);
 
-	console.log(props.match.params);
-
-	return (
-		<div className="container mt-3">
-			<h1
-				className="title"
-				style={{
-					fontFamily: "Girassol, cursive cursive",
-					color: "whitesmoke",
-					fontSize: 40,
-					fontStretch: "condensed",
-				}}
-			>
-				{question.ranking}
-			</h1>
-			<div
-				className="mt-3 mb-3"
-				style={{
-					backgroundColor: "white",
-					opacity: 0.5,
-					marginLeft: 4,
-					borderRadius: 4,
-				}}
-			>
-				<p
-					style={{
-						fontFamily: "Galdeano, sans-serif",
-						fontSize: 20,
-						color: "black",
-						marginLeft: 4,
-						padding: 15,
-					}}
-				>
-					{question.question_desc}
-				</p>
-			</div>
-
-
-			<p className="lead mb-5">
-				<button
-					class="button button1"
-					style={{
-						backgroundColor: "whitesmoke",
-						border: 0,
-						color: "white",
-						padding: 8,
-						textAlign: "center",
-						textDecoration: "none",
-						margin: 4,
-						cursor: "pointer",
-						marginLeft: 4,
-					}}
-				>
-					<Link
-						to="/questions/"
-						className="font-weight-bold"
-						style={{
-							textDecoration: "none",
-							color: "black",
-							fontFamily: "Galdeano, sans-serif",
-							fontSize: 18,
-						}}
-					>
-						Back to Blogs
-					</Link>
-				</button>
-			</p>
-		</div>
+    return (
+        <Fragment>
+            <div className="main-div-question-page">
+                <img src={question_mark} style={{width:'20%', marginTop:'200px'}} />
+                <div className="question-details">
+                    <h1 className="question-heading">Question {question.ranking}</h1>
+                    <p className="question-desc">{question.question_desc}</p>
+                    <div style={{display:'flex' , justifyContent:'space-around'}}>
+                        <Link
+                            className="response-button-link"
+                            to='/correct/'
+                            >
+                            <button className="response-button" style={{backgroundColor:'green'}}><b>Congratulate</b></button>
+                        </Link>
+                        <Link
+                            className="response-button-link" 
+                            to='/wrong/'
+                            >
+                            <button className="response-button" style={{backgroundColor:'red'}}><b>Oops !</b></button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </Fragment>
 	);
 };
 export default QuestionDetail;

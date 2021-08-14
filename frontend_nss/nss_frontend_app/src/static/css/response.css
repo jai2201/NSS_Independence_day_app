@@ -1,0 +1,15 @@
+.main-div-response-page{
+    background: url('../image/background.svg') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+
+.message{
+    padding-top: 125px;
+    font-size: 5em;
+    font-family: 'Bubblegum Sans', cursive;
+}

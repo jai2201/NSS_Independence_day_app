@@ -1,0 +1,37 @@
+.main-div{
+    background: url('../image/background.svg') no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    padding-bottom: 50px;
+}
+.question-number-box{
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: calc(0.6em + 2.5vw);
+    height: calc(1.2em + 2.5vw);
+    padding: 5px;
+    color: red;
+    width: calc(1.2em + 2.5vw);
+}
+.container{
+    width: 50%;
+}
+.logo-text{
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 1.2em;
+    margin-bottom: 0;
+    color: rgb(199, 17, 245);
+}
+.heading{
+    font-size: 2.5em;
+    font-family: 'Bubblegum Sans', cursive;
+    color:rgb(245, 68, 68)
+}
+.sub-heading{
+    font-size: 1.5em;
+    font-family: 'Bubblegum Sans', cursive;
+    color:darkblue
+}

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import '../static/css/question_list_page.css';
+import logo from "../static/image/logo.svg";
 
 const QuestionList = () => {
 	const [questions, setQuestions] = useState([]);
@@ -21,36 +23,45 @@ const QuestionList = () => {
         let result = [];
 
 		questions.map((question) => {
-			return list.push(
-							<Link
-								to={`/question/${question.id}`}
-								style={{
-									textDecoration: "none",
-									color: "#60a3bc",
-									fontFamily: "Galdeano, sans-serif",
-								}}
-							>
-								{question.ranking}
-							</Link>
+            return list.push(
+                <Link
+                    to={`/question/${question.id}`}
+                    style={{
+                        textDecoration: "none",
+                        fontFamily: "Pacifico",
+                        }}>
+                <div className="question-number-box">
+                    {question.ranking}
+                </div>
+                </Link>
+
 			);
 		});
-
-		for (let i = 0; i < list.length; i += 2) {
+                                        
+		for (let i = 0; i < list.length; i += 4) {
 			result.push(
-				<div key={i} className="row mb-0">
-					<div className="col-md-6 p-4">{list[i]}</div>
-					<div className="col-md-6 p-4">{list[i + 1] ? list[i + 1] : null}</div>
+				<div key={i} className="row mb-4">
+					<div className="col-md-3 p-0">{list[i]}</div>
+                    <div className="col-md-3 p-0">{list[i + 1] ? list[i + 1] : null}</div>
+                    <div className="col-md-3 p-0">{list[i + 2] ? list[i + 2] : null}</div>
+					<div className="col-md-3 p-0">{list[i + 3] ? list[i + 3] : null}</div>
 				</div>
 			);
 		}
 
 		return result;
-	};
-
-	return (
-		<div>
-			<div className="container mt-2">{getQuestions()}</div>
-		</div>
+    };
+    
+    return (
+        <center>
+            <div className="main-div">
+                <img src={logo} className="nss-logo" />
+                <p className="logo-text">NSS IITR Presents</p>
+                <p className="heading" >SURPRISE SITUATION TRIVIA !!</p>
+                <p className="sub-heading" >Select a Number</p>
+                <div className="container">{getQuestions()}</div>
+            </div>
+        </center>
 	);
 };
 
